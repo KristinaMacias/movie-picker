@@ -91,12 +91,32 @@ class Person {
   createPerson() {
     let namePrompt1 = prompt("First Person: Please enter your first name");
     let genrePrompt1 = prompt(
-      "First Person: Please enter a genre from the list"
-    );
+      `${namePrompt1}: Please enter a genre from the list:
+
+      1. comedy
+      2. family
+      3. fantasy
+      4. action
+      5. adventure
+      6. sci-fi
+      7. animation
+      8. drama
+  `
+    ).toLocaleLowerCase();
+
     let namePrompt2 = prompt("Second Person: Please enter your first name");
     let genrePrompt2 = prompt(
-      "Second Person: Please enter a genre from the list"
-    );
+      `${namePrompt2}: Please enter a genre from the list:
+      
+      1. comedy
+      2. family
+      3. fantasy
+      4. action
+      5. adventure
+      6. sci-fi
+      7. animation
+      8. drama`
+    ).toLocaleLowerCase();
 
     //creating objects
     let person1 = new Person(namePrompt1, genrePrompt1);
@@ -110,6 +130,7 @@ class Person {
     // console.log("printing people array: ", people);
   }
 }
+
 
 let personBuilder = new Person();
 personBuilder.createPerson();
@@ -133,6 +154,7 @@ class MovieService {
         this.remainingCatalog.push(movie);
       }
     }
+    //printing movie search results to console
     console.log(
       `${people[0].name} and ${people[1].name} selected ${person1Genre} and ${person2Genre} genres. Here our recommended movies: `,
       this.selectedMovies
