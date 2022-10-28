@@ -93,14 +93,14 @@ class Person {
     let genrePrompt1 = prompt(
       `${namePrompt1}: Please enter a genre from the list:
 
-      1. comedy
-      2. family
-      3. fantasy
-      4. action
-      5. adventure
-      6. sci-fi
-      7. animation
-      8. drama
+      comedy
+      family
+      fantasy
+      action
+      adventure
+      sci-fi
+      animation
+      drama
   `
     ).toLocaleLowerCase();
 
@@ -108,14 +108,14 @@ class Person {
     let genrePrompt2 = prompt(
       `${namePrompt2}: Please enter a genre from the list:
       
-      1. comedy
-      2. family
-      3. fantasy
-      4. action
-      5. adventure
-      6. sci-fi
-      7. animation
-      8. drama`
+      comedy
+      family
+      fantasy
+      action
+      adventure
+      sci-fi
+      animation
+      drama`
     ).toLocaleLowerCase();
 
     //creating objects
@@ -164,6 +164,8 @@ class MovieService {
       this.remainingCatalog
     );
   }
+
+  //this is extra - all these results are already printed to the console
   mapRecommendations() {
     document.getElementById("map-movies").innerHTML = this.selectedMovies
       .map(
@@ -202,6 +204,5 @@ class MovieService {
 let movieApp = new MovieService();
 movieApp.findOptions();
 
-//could this be week 5 if students were provided starter code and told to uncomment method calls below?
 movieApp.mapRecommendations();
 movieApp.mapPeople();
